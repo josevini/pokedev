@@ -5,6 +5,7 @@ export const useSearchDataStore = defineStore('dataSearch', () => {
     const pokemonId = ref(undefined)
     const pokemonName = ref('')
     const pokemonStats = ref([])
+    const pokemonEvolutions = ref([])
 
     function setPokemonId(id) {
         pokemonId.value = id
@@ -15,8 +16,12 @@ export const useSearchDataStore = defineStore('dataSearch', () => {
     }
 
     function setPokemonStats(stats) {
-      pokemonStats.value.push(stats)
+        pokemonStats.value = [stats]
     }
 
-    return { pokemonId, pokemonName, pokemonStats, setPokemonId, setPokemonName, setPokemonStats }
+    function setPokemonEvolutions(evolutions) {
+        pokemonEvolutions.value = evolutions
+    }
+
+    return { pokemonId, pokemonName, pokemonStats, pokemonEvolutions, setPokemonId, setPokemonName, setPokemonStats, setPokemonEvolutions }
 })
