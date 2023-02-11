@@ -4,6 +4,7 @@ import { ref } from 'vue'
 export const useSearchDataStore = defineStore('dataSearch', () => {
     const pokemonId = ref(undefined)
     const pokemonName = ref('')
+    const pokemonIcon = ref('')
     const pokemonStats = ref([])
     const pokemonEvolutions = ref([])
 
@@ -15,13 +16,17 @@ export const useSearchDataStore = defineStore('dataSearch', () => {
         pokemonName.value = name
     }
 
+    function setPokemonIcon(sprites) {
+        pokemonIcon.value = sprites
+    }
+
     function setPokemonStats(stats) {
-        pokemonStats.value = [stats]
+        pokemonStats.value = stats
     }
 
     function setPokemonEvolutions(evolutions) {
         pokemonEvolutions.value = evolutions
     }
 
-    return { pokemonId, pokemonName, pokemonStats, pokemonEvolutions, setPokemonId, setPokemonName, setPokemonStats, setPokemonEvolutions }
+    return { pokemonId, pokemonName, pokemonIcon, pokemonStats, pokemonEvolutions, setPokemonId, setPokemonName, setPokemonIcon, setPokemonStats, setPokemonEvolutions }
 })
