@@ -1,5 +1,17 @@
+<script setup>
+  import { RouterView } from 'vue-router'
+</script>
+
 <template>
-  <div>
-    <h1>Olá, Mundo!</h1>
-  </div>
+  <main class="main">
+    <RouterView />
+  </main>
 </template>
+
+<style scoped>
+  .main {
+    width: 100%;
+    height: 100vh;
+    background-color: #FE4E6E;
+  }
+</style>
