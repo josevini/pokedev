@@ -22,23 +22,22 @@
 
 <style scoped>
     .card-container {
-        width: 100%;
+        max-width: 1200px;
+        margin: auto;
         display: flex;
-        justify-content: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        flex-wrap: wrap;
+        
     }
 
     .card-pokemon {
-        width: 365px;
-        height: 380px;
+        flex-basis: calc(33% - 1em);
+        height: 360px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        align-items: center;
         padding: 5px;
-        margin: 0 .5em;
+        margin: .5em;
         background-color: #fff;
         border-radius: 10px;
     }
@@ -52,5 +51,25 @@
         width: max(100%, 250px);
         width: 100%;
         height: 100%;
+    }
+
+    .name {
+        font-size: 20px;       
+    }
+
+    @media screen and (max-width: 880px) {
+        .card-pokemon {
+            flex-basis: calc(50% - 1em);
+        }
+    }
+
+    @media screen and (max-width: 650px) {
+        .card-container {
+            justify-content: center;
+        }
+
+        .card-pokemon {
+            flex-basis: calc(100% - 1em);
+        }
     }
 </style>
