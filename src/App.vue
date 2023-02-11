@@ -11,7 +11,7 @@
 <style scoped>
   .main {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #FE4E6E;
   }
 </style>
